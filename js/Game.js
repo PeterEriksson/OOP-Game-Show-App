@@ -11,5 +11,20 @@ class Game {
         
     }
     
+ get getRandomPhrase() {
+        const randomNr = Math.floor(Math.random() * 5); // returns a random integer from 0 to 4
+        return this.phrases[randomNr]; //ok
+    }
     
 }
+
+
+const newG = new Game();
+console.log(newG.getRandomPhrase);
+//ok.
+
+
+
+
+
+
