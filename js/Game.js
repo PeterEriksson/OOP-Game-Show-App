@@ -27,28 +27,36 @@ class Game {
 /**
 * Begins game by selecting a random phrase and displaying it to user
 */
-    startGame(){
+    startGame() {
         //grab div with id 'overlay'
         const divOverlay = document.getElementById('overlay');
         //hide 'overlay'
         divOverlay.style.visibility="hidden";
         
-        
+        /*
+        calls the `getRandomPhrase()` method to select a Phrase object from the Game
+        object’s array of phrases, and then adds the phrase to the gameboard by calling the
+        `addPhraseToDisplay()` method (which is a method on the Phrase class) on the selected Phrase
+        object. The selected phrase should be stored in the Game’s `activePhrase` property, so it can be
+        easily accessed throughout the game.
+        */
         let temp = this.getRandomPhrase;
         temp.addPhraseToDisplay();
         this.activePhrase = temp;
         
-
+        
+    }
+    
+    
+    handleInteraction() {
+        
         
     }
     
 } //end of class Game
 
 
-//const newG = new Game();
-//const phraseEl = newG.getRandomPhrase;
-//console.log(phraseEl);
-//ok.
+
 
 
 

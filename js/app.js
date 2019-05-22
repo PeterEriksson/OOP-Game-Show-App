@@ -49,7 +49,26 @@ logPhrase(game.getRandomPhrase);
 //ok!
 
 //step 7
-const game = new Game();
+//const game = new Game();
+//game.startGame();
+//console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+//ok!
+
+/*
+Step 8
+Now that you’ve built the basics, head over to the app.js file. This is where you’ll create an
+event listener for the "Start Game" button that the user sees when they load your Phrase
+Hunter game.
+*/
+let game = '';
+const button = document.getElementById('btn__reset');
+
+button.addEventListener('click', event => {
+game = new Game();
 game.startGame();
-console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
+    
+});
+//------------- ok!
+
+
 

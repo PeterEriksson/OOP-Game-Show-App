@@ -30,7 +30,7 @@ let elementPhrase = this.phrase;
 
        for(let i=0; i < elementPhrase.length; i++){
            
-           //console.log(elementPhrase[i]); //test ok
+           console.log(elementPhrase[i]); //test ok
            
         
            let list = document.createElement('li');
