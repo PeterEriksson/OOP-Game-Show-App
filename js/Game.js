@@ -2,6 +2,14 @@
  * Project 4 - OOP Game App
  * Game.js */
 
+/* eslint-env es6 */
+/* eslint-disable no-console */
+
+/* eslint-env browser  */
+
+/*
+for starting and ending the game, handling
+interactions, getting a random phrase, checking for a win, and removing a life from the scoreboard. */
 class Game {
     constructor(){
         this.missed = 0;
@@ -16,22 +24,29 @@ class Game {
         return this.phrases[randomNr]; //ok
     }
     
+/**
+* Begins game by selecting a random phrase and displaying it to user
+*/
+    startGame(){
+        //grab div with id 'overlay'
+        const divOverlay = document.getElementById('overlay');
+        //hide 'overlay'
+        divOverlay.style.visibility="hidden";
+        
+        
+        let temp = this.getRandomPhrase;
+        temp.addPhraseToDisplay();
+        this.activePhrase = temp;
+        
+
+        
+    }
     
-//    startGame(){
-//        //grab div with id 'overlay'
-//        const divOverlay = document.getElementById('overlay');
-//        //hide 'overlay'
-//        divOverlay.style.visibility="hidden";
-//        
-//        getRandomPhrase();
-//        
-//    }
-    
-}
+} //end of class Game
 
 
-const newG = new Game();
-const phraseEl = newG.getRandomPhrase;
+//const newG = new Game();
+//const phraseEl = newG.getRandomPhrase;
 //console.log(phraseEl);
 //ok.
 

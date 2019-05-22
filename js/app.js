@@ -2,6 +2,11 @@
  * Project 4 - OOP Game App
  * app.js */
 
+/* eslint-env es6 */
+/* eslint-disable no-console */
+
+/* eslint-env browser  */
+
 //const phrase = new Phrase();
 //const game = new Game();
 
@@ -39,7 +44,12 @@ logPhrase(game.getRandomPhrase);
 //game.getRandomPhrase.addPhraseToDisplay();
 
 //step 6
-const game = new Game();
-game.getRandomPhrase.addPhraseToDisplay();
+//const game = new Game();
+//game.getRandomPhrase.addPhraseToDisplay();
 //ok!
+
+//step 7
+const game = new Game();
+game.startGame();
+console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 
