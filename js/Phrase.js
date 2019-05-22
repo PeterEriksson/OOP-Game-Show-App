@@ -11,40 +11,54 @@ class Phrase {
         
         this.phrase = phrase.toLowerCase();
         
-        
     }
     
-    
+    /*
+    *Display phrase on game board
+    */
    addPhraseToDisplay() {
        
-//       const div = document.createElement('div id="phrase" class="section"');
-              //const div = document.createElement('div');
 
-       const body = document.querySelector('body');
-       body.append(div);
+let elementPhrase = this.phrase;
+              
+       console.log(elementPhrase)
+       //test ok.
        
-       let ul = document.createElement('ul');
+       //grabs ul
+       const ul = document.querySelector('ul');
 
-       
-       const length =  newG.phrases.length;
+       for(let i=0; i < elementPhrase.length; i++){
+           
+           console.log(elementPhrase[i]); //test ok
+           
+        
+           let list = document.createElement('li');
+           if(elementPhrase[i] === ' ')
+               {
+                   
+                list.className = "space";
+                list.textContent = ' ';   
+                   
+                ul.appendChild(list);   
+                   
 
+                   
+                   
+               }
+           //if we have a letter (not space)
+           else{
+               
+               list.className = `hide letter ${elementPhrase[i]}`;
+               list.textContent = elementPhrase[i];
+               ul.appendChild(list); 
+
+           }
+       }
        
-       newG.phrases.length;
-       
-//       for(let i = 0; i < length i++){
-//            let li = document.createElement('li');
-//            
-//           ul.appendChild(li);
-//           
-//           
-//       }
        
     }
+    
+    
 }
 
-const body = document.querySelector('body');
-const div = document.createElement('div');
-body.append(div);
-div.setAttribute("id","phrase")
-div.setAttribute("class","section")
 

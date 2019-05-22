@@ -35,3 +35,11 @@ logPhrase(game.getRandomPhrase);
 */
 //ok
 
+//const game = new Game();
+//game.getRandomPhrase.addPhraseToDisplay();
+
+//step 6
+const game = new Game();
+game.getRandomPhrase.addPhraseToDisplay();
+//ok!
+

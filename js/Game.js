@@ -16,11 +16,23 @@ class Game {
         return this.phrases[randomNr]; //ok
     }
     
+    
+//    startGame(){
+//        //grab div with id 'overlay'
+//        const divOverlay = document.getElementById('overlay');
+//        //hide 'overlay'
+//        divOverlay.style.visibility="hidden";
+//        
+//        getRandomPhrase();
+//        
+//    }
+    
 }
 
 
 const newG = new Game();
-console.log(newG.getRandomPhrase);
+const phraseEl = newG.getRandomPhrase;
+//console.log(phraseEl);
 //ok.
 
 
