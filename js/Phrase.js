@@ -71,7 +71,7 @@ let elementPhrase = this.phrase;
 
         }
         return found;
-    } //ok!
+    } //ok
     
     
     showMatchedLetter(letter) {
@@ -86,7 +86,7 @@ let elementPhrase = this.phrase;
                 for(let i=0; i < listMatched.length; i++){
                     listMatched[i].classList.toggle('show'); 
                 }
-        } //OK!!
+        } //ok
               
         
      } //end of showMatchedLetter

@@ -53,6 +53,37 @@ class Game {
         
     }
     
+    
+/**
+* Checks for winning move
+* @return {boolean} True if game has been won, false if game wasn't
+won
+*/
+checkForWin() {
+        let liElements = [];
+        liElements = document.querySelector('ul').children; //grabs ok
+    
+    //scroll through all li elements and check if all are 'show'
+    
+    //for(let i=0; i<this.activePhrase.length; i++){
+    for(let i=0; i<liElements.length; i++){
+
+
+        if(liElements[i].classList.contains('show')){ 
+                
+
+            console.log('test'); //ok. 
+        }
+
+        
+    }
+    
+    
+    
+    
+}
+    
+    
 } //end of class Game
 
 
