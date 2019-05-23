@@ -62,7 +62,13 @@ won
 checkForWin() {
         let liElements = [];
         liElements = document.querySelector('ul').children; //grabs ok
-    
+        
+        //keeps track of letters that have been revealed
+        let okLetters =0;
+        //keeps track of nr of spaces in the phrase
+        let spaceElements = 0;
+        
+        let winOk = false;
     //scroll through all li elements and check if all are 'show'
     
     //for(let i=0; i<this.activePhrase.length; i++){
@@ -71,17 +77,31 @@ checkForWin() {
 
         if(liElements[i].classList.contains('show')){ 
                 
-
-            console.log('test'); //ok. 
+            //console.log('test'); //ok. 
+            //okLetters is added by 1 
+            okLetters++;
+            
         }
 
+        //collect li element spaces
+        if(liElements[i].classList.contains('space')){
+            spaceElements++;
+        }
         
+    }//end of loop
+    
+    //Now: if okLetters is equal to liElements.length minus spaceElements then player has won.
+    if(okLetters === liElements.length - spaceElements ){
+        //console.log('ok');
+        winOk = true;
     }
     
+    //return false or true.
+    return winOk;
     
     
+} //end of checkForWin()        //seems to work. ok.
     
-}
     
     
 } //end of class Game
