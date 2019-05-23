@@ -59,7 +59,47 @@ let elementPhrase = this.phrase;
        
     }
     
+    checkLetter(letter) {
+      
+       let found = false;
+        
+        for(let i=0; i < this.phrase.length; i++){
+            
+            if(this.phrase[i] === letter){
+                found = true;
+            }
+
+        }
+        return found;
+    } //ok!
     
-}
+    
+    showMatchedLetter(letter) {
+        //<li class="hide letter h">
+        //game.activePhrase.showMatchedLetter('a')
+        
+        if(this.checkLetter){
+            //we (might) collect a bunch of results. Create array
+            let listMatched = []
+            listMatched = document.getElementsByClassName('hide letter '+letter);
+                //loop through the array and for every list element -> show.
+                for(let i=0; i < listMatched.length; i++){
+                    listMatched[i].classList.toggle('show'); 
+                }
+        } //OK!!
+        
+
+                
+            } //end of showMatchedLetter
+            
+
+    
+} //end of class Phrase
+        
+    
+    
+
+    
+
 
 
