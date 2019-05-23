@@ -69,15 +69,14 @@ checkForWin() {
         let spaceElements = 0;
         
         let winOk = false;
-    //scroll through all li elements and check if all are 'show'
     
-    //for(let i=0; i<this.activePhrase.length; i++){
+    //scroll through all li elements and check how many okLetters we have    
     for(let i=0; i<liElements.length; i++){
 
 
         if(liElements[i].classList.contains('show')){ 
                 
-            //console.log('test'); //ok. 
+             
             //okLetters is added by 1 
             okLetters++;
             
@@ -92,7 +91,7 @@ checkForWin() {
     
     //Now: if okLetters is equal to liElements.length minus spaceElements then player has won.
     if(okLetters === liElements.length - spaceElements ){
-        //console.log('ok');
+        
         winOk = true;
     }
     
@@ -103,6 +102,28 @@ checkForWin() {
 } //end of checkForWin()        //seems to work. ok.
     
     
+    
+/*
+`removeLife()`: This method removes a life from the scoreboard, by replacing one
+of the `liveHeart.png` images with a `lostHeart.png` image (found in the `images`
+folder) and increments the `missed` property. If the player has five missed
+guesses (i.e they're out of lives), then end the game by calling the `gameOver()`
+method.
+
+*/    
+    removeLife() {
+        
+        
+        
+    }
+    
+    gameOver() {
+        
+        
+        
+    }
+    
+        
     
 } //end of class Game
 
