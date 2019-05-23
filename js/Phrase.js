@@ -87,10 +87,9 @@ let elementPhrase = this.phrase;
                     listMatched[i].classList.toggle('show'); 
                 }
         } //OK!!
+              
         
-
-                
-            } //end of showMatchedLetter
+     } //end of showMatchedLetter
             
 
     
