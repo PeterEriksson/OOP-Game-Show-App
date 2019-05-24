@@ -23,14 +23,14 @@ class Phrase {
 
 let elementPhrase = this.phrase;
               
-       //console.log(elementPhrase) //test ok.
+       console.log(elementPhrase) //test ok.
        
        //grabs ul
        const ul = document.querySelector('ul');
 
        for(let i=0; i < elementPhrase.length; i++){
            
-           console.log(elementPhrase[i]); //test ok
+           //console.log(elementPhrase[i]); //test ok
            
         
            let list = document.createElement('li');

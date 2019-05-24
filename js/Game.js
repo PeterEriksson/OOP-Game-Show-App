@@ -110,13 +110,32 @@ folder) and increments the `missed` property. If the player has five missed
 guesses (i.e they're out of lives), then end the game by calling the `gameOver()`
 method.
 
+//Test:
+To test the `removeLife()` method, I simply called the method in the console to test that it
+properly updated a heart image in the scoreboard (indicating that a life was "lost"):  game.removeLife()
+
+Then I called the `removeLife()` method four more times to test that the game would end and
+display the "lost" message:
+
 */    
     removeLife() {
+        //grab ol:s children (the hearts li)
+        let hearts = [];
+        hearts = document.querySelector('ol').children;
+        
+
+
+        hearts[this.missed].src = "images/lostHeart.png";
+        
+
         
         
-        
+        //increment the `missed` property.
+           this.missed++; 
+            
+            
     }
-    
+        
     gameOver() {
         
         
