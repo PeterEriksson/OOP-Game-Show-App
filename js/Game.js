@@ -118,29 +118,33 @@ Then I called the `removeLife()` method four more times to test that the game wo
 display the "lost" message:
 
 */    
+    
+        gameOver() {
+        
+        
+        
+    }
+    
     removeLife() {
-        //grab ol:s children (the hearts li)
-        let hearts = [];
-        hearts = document.querySelector('ol').children;
-        
-
-
-        hearts[this.missed].src = "images/lostHeart.png";
-        
-
-        
+                
+        //select the li element that we're at(depending on how many lives we've lost). Then select the first child of that li element which is the img, then alter the src value to lostHeart.
+        document.querySelectorAll('.tries')[this.missed].children[0].src = "images/lostHeart.png"; //ok
         
         //increment the `missed` property.
            this.missed++; 
             
+        /*
+        If the player has five missed
+        guesses (i.e they're out of lives), then end the game by calling the gameOver() method.
+        */
+        
+        if(this.missed===5){ //
+            this.gameOver(); 
+        }
             
-    }
+} //end of removeLife
         
-    gameOver() {
-        
-        
-        
-    }
+
     
         
     
