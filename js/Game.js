@@ -10,6 +10,10 @@
 /*
 for starting and ending the game, handling
 interactions, getting a random phrase, checking for a win, and removing a life from the scoreboard. */
+
+//introduction div
+const divOverlay = document.getElementById('overlay');
+
 class Game {
     constructor(){
         this.missed = 0;
@@ -27,9 +31,10 @@ class Game {
 /**
 * Begins game by selecting a random phrase and displaying it to user
 */
+    
     startGame() {
         //grab div with id 'overlay'
-        const divOverlay = document.getElementById('overlay');
+       // const divOverlay = document.getElementById('overlay');
         //hide 'overlay'
         divOverlay.style.visibility="hidden";
         
@@ -103,7 +108,7 @@ checkForWin() {
     
     
     
-/*
+/* REMOVE LIFE
 `removeLife()`: This method removes a life from the scoreboard, by replacing one
 of the `liveHeart.png` images with a `lostHeart.png` image (found in the `images`
 folder) and increments the `missed` property. If the player has five missed
@@ -116,14 +121,40 @@ properly updated a heart image in the scoreboard (indicating that a life was "lo
 
 Then I called the `removeLife()` method four more times to test that the game would end and
 display the "lost" message:
+*/    
 
+/* GAME OVER    
+    `gameOver()`: This method displays the original start screen overlay, and
+depending on the outcome of the game, updates the overlay `h1` element with a
+friendly win or loss message, and replaces the overlay’s `start` CSS class with
+either the `win` or `lose` CSS class.
 */    
     
-        gameOver() {
-        
-        
-        
-    }
+        gameOver(gameWon) {
+            
+         let gameWonn = false;
+            //Show the introduction div again.
+            divOverlay.style.visibility="visible"; //ok.
+            
+            if(this.missed===5 || this.missed > 5){
+                //grab h1-element and change its textcontent
+                document.getElementById('game-over-message').textContent='Sorry, better luck next time'; //ok.
+                
+                //change/replace color
+                divOverlay.classList.replace('start', 'lose'); //ok.
+                
+            }
+            
+            else{
+             document.getElementById('game-over-message').textContent='Congratulations, you won';
+                
+                //change color
+                divOverlay.classList.replace('start', 'win'); //ok.
+                gameWonn = true;
+            }
+
+        return gameWonn;
+    } //end of gameOver()  //ok.
     
     removeLife() {
                 
@@ -138,7 +169,7 @@ display the "lost" message:
         guesses (i.e they're out of lives), then end the game by calling the gameOver() method.
         */
         
-        if(this.missed===5){ //
+        if(this.missed===5 || this.missed > 5){ //
             this.gameOver(); 
         }
             
