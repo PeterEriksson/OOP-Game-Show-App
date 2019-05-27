@@ -78,6 +78,7 @@ let elementPhrase = this.phrase;
         //<li class="hide letter h">
         //game.activePhrase.showMatchedLetter('a')
         
+        //if it is true:
         if(this.checkLetter){
             //we (might) collect a bunch of results. Create array
             let listMatched = []

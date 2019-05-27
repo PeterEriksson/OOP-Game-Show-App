@@ -14,6 +14,11 @@ interactions, getting a random phrase, checking for a win, and removing a life f
 //introduction div
 const divOverlay = document.getElementById('overlay');
 
+//nr of letters
+const lettersLength = document.querySelectorAll('.keyrow')[0].children.length + document.querySelectorAll('.keyrow')[1].children.length + document.querySelectorAll('.keyrow')[2].children.length;
+
+
+
 class Game {
     constructor(){
         this.missed = 0;
@@ -52,11 +57,7 @@ class Game {
         
     }
     
-    
-    handleInteraction() {
-        
-        
-    }
+
     
     
 /**
@@ -136,7 +137,7 @@ either the `win` or `lose` CSS class.
             //Show the introduction div again.
             divOverlay.style.visibility="visible"; //ok.
             
-            if(this.missed===5 || this.missed > 5){
+            if(this.missed===5){
                 //grab h1-element and change its textcontent
                 document.getElementById('game-over-message').textContent='Sorry, better luck next time'; //ok.
                 
@@ -169,13 +170,52 @@ either the `win` or `lose` CSS class.
         guesses (i.e they're out of lives), then end the game by calling the gameOver() method.
         */
         
-        if(this.missed===5 || this.missed > 5){ //
+        if(this.missed===5){ //
             this.gameOver(); 
         }
             
 } //end of removeLife
         
-
+    
+    //STEP 11:
+    handleInteraction(button) {
+        
+        //console.log(button); //ok
+        //console.log(button.textContent); //ok
+        
+    //Disable the selected letter’s onscreen keyboard button.
+        button.disabled = true; //ok
+        
+        //If the phrase does not include the guessed letter, add the `wrong` CSS class to the
+        //selected letter's keyboard button and call the `removeLife()` method.    
+            if(!(this.activePhrase.checkLetter(button.textContent))){ //ok
+            
+            button.classList.toggle('wrong'); //ok
+            this.removeLife();
+        
+            }
+        
+            //If the phrase includes the guessed letter, add the `chosen` CSS class to the selected
+            //letter's keyboard button, call the `showMatchedLetter()` method on the phrase, and then
+        
+            //call the `checkForWin()` method. If the player has won the game, also call the
+            //`gameOver()` method.
+            if(this.activePhrase.checkLetter(button.textContent)){
+                
+             button.classList.toggle('chosen');
+             this.activePhrase.showMatchedLetter(button.textContent);
+                
+               
+              if(game.checkForWin()){ //works.
+                  
+                  game.gameOver(); //ok.
+              }
+                
+            }
+            
+        
+        
+    } //end of handleInteraction
     
         
     
