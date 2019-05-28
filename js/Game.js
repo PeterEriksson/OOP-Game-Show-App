@@ -17,6 +17,14 @@ const divOverlay = document.getElementById('overlay');
 //nr of letters
 const lettersLength = document.querySelectorAll('.keyrow')[0].children.length + document.querySelectorAll('.keyrow')[1].children.length + document.querySelectorAll('.keyrow')[2].children.length;
 
+//arr of letters
+const arrOfLetters0 = document.querySelectorAll('.keyrow')[0].children;
+const arrOfLetters1 = document.querySelectorAll('.keyrow')[1].children;
+const arrOfLetters2 = document.querySelectorAll('.keyrow')[2].children;
+
+
+
+
 
 
 class Game {
@@ -131,6 +139,8 @@ friendly win or loss message, and replaces the overlay’s `start` CSS class wit
 either the `win` or `lose` CSS class.
 */    
     
+    //TODO: something wrong with color of game won/lose/start.... error here.
+    
         gameOver(gameWon) {
             
          let gameWonn = false;
@@ -142,15 +152,16 @@ either the `win` or `lose` CSS class.
                 document.getElementById('game-over-message').textContent='Sorry, better luck next time'; //ok.
                 
                 //change/replace color
-                divOverlay.classList.replace('start', 'lose'); //ok.
-                
+                //divOverlay.classList.replace('start', 'lose'); //ok.
+                    divOverlay.classList.toggle('lose');
             }
             
             else{
              document.getElementById('game-over-message').textContent='Congratulations, you won';
                 
                 //change color
-                divOverlay.classList.replace('start', 'win'); //ok.
+                //divOverlay.classList.replace('start', 'win'); //ok.
+                    divOverlay.classList.toggle('win');
                 gameWonn = true;
             }
 
@@ -170,7 +181,7 @@ either the `win` or `lose` CSS class.
         guesses (i.e they're out of lives), then end the game by calling the gameOver() method.
         */
         
-        if(this.missed===5){ //
+        if(this.missed===5){ 
             this.gameOver(); 
         }
             

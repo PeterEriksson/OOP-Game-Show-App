@@ -71,12 +71,70 @@ and not use the `chosen` or `wrong` CSS classes.
 ● Reset all of the heart images (i.e. the player's lives) in the scoreboard at the bottom of
 the gameboard to display the `liveHeart.png` image.
 */
+
+    //test..    
+        let liElements = [];
+        liElements = document.querySelector('ul').children;
+
 let game = '';
 const button = document.getElementById('btn__reset');
 
+//start game button click event
 button.addEventListener('click', event => {
+    
+//player has already played a game:
+    //Remove all `li` elements from the Phrase `ul` element.
+        let ul = document.querySelector('ul');
+        ul.innerHTML = '';
+    
+        this.activePhrase = null;
+    //enable all keyboard letters and fix classes/colours for row 0
+    for(let i=0; i<arrOfLetters0.length; i++){
+        
+        arrOfLetters0[i].classList.remove('wrong');
+        arrOfLetters0[i].classList.remove('chosen');
+        
+        //enable button
+        arrOfLetters0[i].disabled = false;
+        
+    }
+   
+    //enable all keyboard letters and fix classes/colours for row 1
+        for(let i=0; i<arrOfLetters1.length; i++){
+        
+        arrOfLetters1[i].classList.remove('wrong');
+        arrOfLetters1[i].classList.remove('chosen');
+        
+        //enable button
+        arrOfLetters1[i].disabled = false;
+        
+    }
+    
+    //enable all keyboard letters and fix classes/colours for row 2
+        for(let i=0; i<arrOfLetters2.length; i++){
+        
+        arrOfLetters2[i].classList.remove('wrong');
+        arrOfLetters2[i].classList.remove('chosen');
+        
+        //enable butotn
+        arrOfLetters2[i].disabled = false;
+        
+    }
+    
+    //Fix hearts
+        document.querySelectorAll('.tries')[0].children[0].src = "images/liveHeart.png"; 
+        document.querySelectorAll('.tries')[1].children[0].src = "images/liveHeart.png"; 
+        document.querySelectorAll('.tries')[2].children[0].src = "images/liveHeart.png"; 
+        document.querySelectorAll('.tries')[3].children[0].src = "images/liveHeart.png"; 
+        document.querySelectorAll('.tries')[4].children[0].src = "images/liveHeart.png"; 
+
+    
+
+
+//create new game object.    
 game = new Game();
 game.startGame();
+    
     
     
     

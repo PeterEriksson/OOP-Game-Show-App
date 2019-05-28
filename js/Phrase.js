@@ -7,6 +7,8 @@
 
 /* eslint-env browser  */
 
+////make list global so that we can delete list after game is finished
+//let list ='';
 
 class Phrase {
     constructor(phrase){
@@ -31,20 +33,15 @@ let elementPhrase = this.phrase;
        for(let i=0; i < elementPhrase.length; i++){
            
            //console.log(elementPhrase[i]); //test ok
-           
-        
-           let list = document.createElement('li');
+                  
+          let list = document.createElement('li');
            if(elementPhrase[i] === ' ')
                {
                    
                 list.className = "space";
                 list.textContent = ' ';   
                    
-                ul.appendChild(list);   
-                   
-
-                   
-                   
+                ul.appendChild(list);                     
                }
            //if we have a letter (not space)
            else{
@@ -52,11 +49,8 @@ let elementPhrase = this.phrase;
                list.className = `hide letter ${elementPhrase[i]}`;
                list.textContent = elementPhrase[i];
                ul.appendChild(list); 
-
            }
-       }
-       
-       
+       }   
     }
     
     checkLetter(letter) {
