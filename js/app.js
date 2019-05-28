@@ -128,7 +128,6 @@ button.addEventListener('click', event => {
         document.querySelectorAll('.tries')[3].children[0].src = "images/liveHeart.png"; 
         document.querySelectorAll('.tries')[4].children[0].src = "images/liveHeart.png"; 
 
-    
 
 
 //create new game object.    

@@ -7,8 +7,6 @@
 
 /* eslint-env browser  */
 
-////make list global so that we can delete list after game is finished
-//let list ='';
 
 class Phrase {
     constructor(phrase){
@@ -25,15 +23,13 @@ class Phrase {
 
 let elementPhrase = this.phrase;
               
-       console.log(elementPhrase) //test ok.
+       console.log(elementPhrase) //for testing reasons, this is logged.
        
        //grabs ul
        const ul = document.querySelector('ul');
 
        for(let i=0; i < elementPhrase.length; i++){
-           
-           //console.log(elementPhrase[i]); //test ok
-                  
+                             
           let list = document.createElement('li');
            if(elementPhrase[i] === ' ')
                {
@@ -69,8 +65,6 @@ let elementPhrase = this.phrase;
     
     
     showMatchedLetter(letter) {
-        //<li class="hide letter h">
-        //game.activePhrase.showMatchedLetter('a')
         
         //if it is true:
         if(this.checkLetter){

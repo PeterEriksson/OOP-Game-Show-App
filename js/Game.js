@@ -38,16 +38,14 @@ class Game {
     
  get getRandomPhrase() {
         const randomNr = Math.floor(Math.random() * 5); // returns a random integer from 0 to 4
-        return this.phrases[randomNr]; //ok
+        return this.phrases[randomNr]; 
     }
     
 /**
 * Begins game by selecting a random phrase and displaying it to user
-*/
-    
+*/  
     startGame() {
         //grab div with id 'overlay'
-       // const divOverlay = document.getElementById('overlay');
         //hide 'overlay'
         divOverlay.style.visibility="hidden";
         
@@ -66,13 +64,6 @@ class Game {
     }
     
 
-    
-    
-/**
-* Checks for winning move
-* @return {boolean} True if game has been won, false if game wasn't
-won
-*/
 checkForWin() {
         let liElements = [];
         liElements = document.querySelector('ul').children; //grabs ok
@@ -113,34 +104,9 @@ checkForWin() {
     return winOk;
     
     
-} //end of checkForWin()        //seems to work. ok.
-    
-    
-    
-/* REMOVE LIFE
-`removeLife()`: This method removes a life from the scoreboard, by replacing one
-of the `liveHeart.png` images with a `lostHeart.png` image (found in the `images`
-folder) and increments the `missed` property. If the player has five missed
-guesses (i.e they're out of lives), then end the game by calling the `gameOver()`
-method.
-
-//Test:
-To test the `removeLife()` method, I simply called the method in the console to test that it
-properly updated a heart image in the scoreboard (indicating that a life was "lost"):  game.removeLife()
-
-Then I called the `removeLife()` method four more times to test that the game would end and
-display the "lost" message:
-*/    
-
-/* GAME OVER    
-    `gameOver()`: This method displays the original start screen overlay, and
-depending on the outcome of the game, updates the overlay `h1` element with a
-friendly win or loss message, and replaces the overlay’s `start` CSS class with
-either the `win` or `lose` CSS class.
-*/    
-    
-    //TODO: something wrong with color of game won/lose/start.... error here.
-    
+} //end of checkForWin()   
+       
+        
         gameOver(gameWon) {
             
          let gameWonn = false;
@@ -149,22 +115,25 @@ either the `win` or `lose` CSS class.
             
             if(this.missed===5){
                 //grab h1-element and change its textcontent
-                document.getElementById('game-over-message').textContent='Sorry, better luck next time'; //ok.
+                document.getElementById('game-over-message').textContent='You lost, better luck next time'; //ok.
                 
-                //change/replace color
-                //divOverlay.classList.replace('start', 'lose'); //ok.
-                    divOverlay.classList.toggle('lose');
+                
+                
+                //change color of background
+                    divOverlay.classList.add('lose');
             }
             
             else{
              document.getElementById('game-over-message').textContent='Congratulations, you won';
                 
-                //change color
-                //divOverlay.classList.replace('start', 'win'); //ok.
-                    divOverlay.classList.toggle('win');
+                //change color of background
+                    divOverlay.classList.remove('lose');
+                    divOverlay.classList.add('win');
                 gameWonn = true;
             }
+            
 
+            
         return gameWonn;
     } //end of gameOver()  //ok.
     
@@ -191,11 +160,9 @@ either the `win` or `lose` CSS class.
     //STEP 11:
     handleInteraction(button) {
         
-        //console.log(button); //ok
-        //console.log(button.textContent); //ok
         
     //Disable the selected letter’s onscreen keyboard button.
-        button.disabled = true; //ok
+        button.disabled = true; 
         
         //If the phrase does not include the guessed letter, add the `wrong` CSS class to the
         //selected letter's keyboard button and call the `removeLife()` method.    
