@@ -7,15 +7,7 @@
 
 /* eslint-env browser  */
 
-//const phrase = new Phrase();
-//const game = new Game();
 
-//console.log(game);
-
-//const phrase = new Phrase('Life is like a box of chocolates');
-
-//console.log(`Phrase - phrase: ${phrase.phrase}`);
-//ok
 
 /*
 const gamee = new Game();
@@ -54,27 +46,11 @@ logPhrase(game.getRandomPhrase);
 //console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 //ok!
 
-/*
-Step 8
-Now that you’ve built the basics, head over to the app.js file. This is where you’ll create an
-event listener for the "Start Game" button that the user sees when they load your Phrase
-Hunter game.
-*/
 
-/* Step 12
-Update your app to reset the gameboard between games. After a game is completed, the
-gameboard needs to be reset so that clicking the "Start Game" button will successfully load a
-new game.
-● Remove all `li` elements from the Phrase `ul` element.
-● Enable all of the onscreen keyboard buttons and update each to use the `key` CSS class,
-and not use the `chosen` or `wrong` CSS classes.
-● Reset all of the heart images (i.e. the player's lives) in the scoreboard at the bottom of
-the gameboard to display the `liveHeart.png` image.
-*/
 
     //test..    
-        let liElements = [];
-        liElements = document.querySelector('ul').children;
+    //let liElements = [];
+    //liElements = document.querySelector('ul').children;
 
 let game = '';
 const button = document.getElementById('btn__reset');
@@ -137,23 +113,16 @@ game.startGame();
     
     
     
-});
-//------------- ok!
+});  //END OF start game button click event
+//------------- 
 
-//Step 10
-/*
-add a "click" event listener to each of the onscreen keyboard buttons or use
-event delegation and add a single event listenerthat listens for a click on any of the onscreen
-keyboard buttons. If you use event delegation, make sure that clicking the space between and
-around the onscreen keyboard buttons does not result in the `handleInteraction()` method being
-called.
-*/
+
 
 // not used atm
 const keyrows = document.getElementsByClassName("keyrow");
 //
 
-//select all letters on all rows
+//select all letters on all rows (0,1 and 2)
 const buttonLetterQ = document.getElementsByClassName('keyrow')[0].children[0];
 const buttonLetterW = document.getElementsByClassName('keyrow')[0].children[1];
 const buttonletterE = document.getElementsByClassName('keyrow')[0].children[2];

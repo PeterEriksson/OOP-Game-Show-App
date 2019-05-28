@@ -7,9 +7,6 @@
 
 /* eslint-env browser  */
 
-/*
-for starting and ending the game, handling
-interactions, getting a random phrase, checking for a win, and removing a life from the scoreboard. */
 
 //introduction div
 const divOverlay = document.getElementById('overlay');
@@ -190,8 +187,7 @@ checkForWin() {
               }
                 
             }
-            
-        
+                  
         
     } //end of handleInteraction
     
