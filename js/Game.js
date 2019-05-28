@@ -7,6 +7,10 @@
 
 /* eslint-env browser  */
 
+//GRADE I AM AIMING FOR: Just a pass. 
+//FOR TESTING REASONS THE PHRASE IS LOGGED IN THE CONSOLE.
+//   /Peter
+
 
 //introduction div
 const divOverlay = document.getElementById('overlay');
